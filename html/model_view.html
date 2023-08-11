@@ -42,7 +42,7 @@
 			//模型材质
 			import { Charibert,Haumeric,Noudenet,Haurchefant } from './normalMap.js';
 			import { Noudenet_shenxueyuan,Haumeric_shenxueyuan,Charibert_shenwenguan } from './normalMap.js';
-			import { Noudenet_zongguan } from './normalMap.js';
+			import { Noudenet_zongguan,Haumeric_zongguan,Charibert_zongguan }from './normalMap.js';
 
 
 			let camera, scene, renderer, effect,controls;
@@ -127,6 +127,8 @@
 					'models/mmd/pmx/Charibert_shenwenguan.pmx',
 					'models/mmd/pmx/Haurchefant.pmx',
 					'models/mmd/pmx/Noudenet_zongguan.pmx',
+					'models/mmd/pmx/Haumeric_zongguan.pmx',
+					'models/mmd/pmx/Charibert_zongguan.pmx',
 				];
 
 				const vpdFiles = [
@@ -165,6 +167,8 @@
 						case 5: Charibert_shenwenguan(mesh);break;
 						case 6: Haurchefant(mesh);break;
 						case 7: Noudenet_zongguan(mesh);break;
+						case 8: Haumeric_zongguan(mesh);break;
+						case 9: Charibert_zongguan(mesh);break;
 						default:Haumeric(mesh);break;
 						}
 

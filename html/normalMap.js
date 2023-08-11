@@ -478,6 +478,104 @@ function Noudenet_zongguan(model){
     model.material[17].normalMap = normalMap_met_zongguan;
     model.material[18].normalMap = normalMap_met_zongguan;
 }
+function Haumeric_zongguan(model){
+    const normalMap_etc_Haumeric = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/etc-Haumeric_n.png' );
+    const normalMap_hair_Haumeric = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/hair-Haumeric_n.png' );
+    normalMap_etc_Haumeric.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_hair_Haumeric.wrapT   = THREE.MirroredRepeatWrapping;
+
+    const normalMap_body = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/body_n.png' );
+    const normalMap_eyes = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/yan_n.png' );
+    const normalMap_face_Charibert = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/face-Charibert_n.png' );
+    normalMap_body.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_eyes.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_face_Charibert.wrapT   = THREE.MirroredRepeatWrapping;
+
+    const normalMap_top_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/top_zongguan_n.png' );
+    const normalMap_glv_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/glv_zongguan_n.png' );
+    const normalMap_dwn_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/dwn_zongguan_n.png' );
+    const normalMap_sho_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/sho_zongguan_n.png' );
+    const normalMap_met_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/met_zongguan_n.png' );
+    normalMap_top_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_glv_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_dwn_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_sho_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_met_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+
+    model.material[0].normalMap = normalMap_face_Charibert;
+    model.material[1].normalMap = normalMap_body;
+    model.material[2].normalMap = normalMap_dwn_zongguan;
+    model.material[3].normalMap = normalMap_top_zongguan;
+    model.material[4].normalMap = normalMap_top_zongguan;
+    model.material[4].normalScale.set(5, 5);
+    model.material[5].normalMap = normalMap_top_zongguan;
+    model.material[5].normalScale.set(5, 5);
+    model.material[6].normalMap = normalMap_sho_zongguan;
+    model.material[7].normalMap = normalMap_glv_zongguan;
+    model.material[8].normalMap = normalMap_face_Charibert;
+    model.material[9].normalMap = normalMap_face_Charibert;
+    model.material[10].normalMap = normalMap_face_Charibert;
+    model.material[11].normalMap = normalMap_eyes;
+    model.material[12].normalMap = normalMap_etc_Haumeric;
+    model.material[13].normalMap = normalMap_etc_Haumeric;
+    model.material[14].normalMap = normalMap_hair_Haumeric;
+    model.material[14].normalScale.set(5, 5);
+    model.material[15].normalMap = normalMap_met_zongguan;
+    model.material[16].normalMap = normalMap_met_zongguan;
+}
+function Charibert_zongguan(model){
+    const normalMap_etc_Charibert = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/etc-Charibert_n.png' );
+    const normalMap_hair_Charibert = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/hair-Charibert_n.png' );
+    const normalMap_hair2_Charibert = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/hair2-Charibert_n.png' );
+    normalMap_etc_Charibert.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_hair_Charibert.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_hair2_Charibert.wrapT   = THREE.MirroredRepeatWrapping;
+
+    const normalMap_body = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/body_n.png' );
+    const normalMap_eyes = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/yan_n.png' );
+    const normalMap_face_Charibert = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/face-Charibert_n.png' );
+    normalMap_body.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_eyes.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_face_Charibert.wrapT   = THREE.MirroredRepeatWrapping;
+
+    const normalMap_top_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/top_zongguan_n.png' );
+    const normalMap_glv_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/glv_zongguan_n.png' );
+    const normalMap_dwn_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/dwn_zongguan_n.png' );
+    const normalMap_sho_zongguan = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/sho_zongguan_n.png' );
+    const normalMap_met_xiaohuangying = new THREE.TextureLoader().load( './models/mmd/pmx/tex/normalMap/met_xiaohuangying_n.png' );
+    normalMap_top_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_glv_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_dwn_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_sho_zongguan.wrapT   = THREE.MirroredRepeatWrapping;
+    normalMap_met_xiaohuangying.wrapT   = THREE.MirroredRepeatWrapping;
+
+    model.material[0].normalMap = normalMap_face_Charibert;
+    model.material[1].normalMap = normalMap_body;
+    model.material[2].normalMap = normalMap_dwn_zongguan;
+    model.material[3].normalMap = normalMap_top_zongguan;
+    model.material[4].normalMap = normalMap_top_zongguan;
+    model.material[4].normalScale.set(5, 5);
+    model.material[5].normalMap = normalMap_top_zongguan;
+    model.material[5].normalScale.set(5, 5);
+    model.material[6].normalMap = normalMap_sho_zongguan;
+    model.material[7].normalMap = normalMap_glv_zongguan;
+    model.material[8].normalMap = normalMap_face_Charibert;
+    model.material[9].normalMap = normalMap_face_Charibert;
+    model.material[10].normalMap = normalMap_face_Charibert;
+    model.material[11].normalMap = normalMap_face_Charibert;
+    model.material[12].normalMap = normalMap_eyes;
+    model.material[13].normalMap = normalMap_etc_Charibert;
+    model.material[14].normalMap = normalMap_etc_Charibert;
+    model.material[15].normalMap = normalMap_etc_Charibert;
+    model.material[15].normalScale.set(5, 5);
+    model.material[16].normalMap = normalMap_hair2_Charibert;
+    model.material[16].normalScale.set(5, 5);
+    model.material[17].normalMap = normalMap_hair_Charibert;
+    model.material[17].normalScale.set(5, 5);
+    model.material[18].normalMap = normalMap_met_xiaohuangying;
+    model.material[19].normalMap = normalMap_met_xiaohuangying;
+    model.material[20].normalMap = normalMap_met_xiaohuangying;
+}
 export { Charibert,Haumeric,Noudenet,Haurchefant }
 export { Noudenet_shenxueyuan,Haumeric_shenxueyuan,Charibert_shenwenguan }
-export { Noudenet_zongguan }
+export { Noudenet_zongguan,Haumeric_zongguan,Charibert_zongguan }
