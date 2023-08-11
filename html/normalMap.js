@@ -401,13 +401,13 @@ function Charibert_shenwenguan(model){
     model.material[8].normalMap = normalMap_sho_shenwenguan;
     model.material[9].normalMap = normalMap_dwn_shenwenguan;
     model.material[10].normalMap = normalMap_top_shenwenguan;
-    model.material[10].normalScale.set(5, 5);
+    model.material[10].normalScale.set(3, 3);
     model.material[11].normalMap = normalMap_top_shenwenguan;
-    model.material[11].normalScale.set(5, 5);
+    model.material[11].normalScale.set(3, 3);
     model.material[12].normalMap = normalMap_top_shenwenguan;
     model.material[12].normalScale.set(5, 5);
     model.material[13].normalMap = normalMap_top_shenwenguan;
-    model.material[13].normalScale.set(5, 5);
+    model.material[13].normalScale.set(3, 3);
     model.material[14].normalMap = normalMap_top_shenwenguan;
     model.material[14].normalScale.set(5, 5);
     model.material[15].normalMap = normalMap_top_shenwenguan;
