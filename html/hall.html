@@ -13,14 +13,14 @@
 			a {
 				color: #08f;
 			}
+			
 		</style>
 	</head>
 
 	<body>
-		<div id="overlay">
+		<!-- <div id="overlay">
 			<button id="startButton">Play</button>
-		</div>
-		
+		</div> -->
 
 		<script src="./node_modules/three/examples/jsm/libs/ammo.wasm.js"></script>
 
@@ -74,31 +74,37 @@
 					};
 
 			const clock = new THREE.Clock();
-
-			const startButton = document.getElementById( 'startButton' );
-			startButton.addEventListener( 'click', function () {
-
-				Ammo().then( function () {
+			Ammo().then( function () {
 
 					init();
 					
 					animate();
 
 				} );
+			// const startButton = document.getElementById( 'startButton' );
+			// startButton.addEventListener( 'click', function () {
 
-			} );
+			// 	Ammo().then( function () {
+
+			// 		init();
+					
+			// 		animate();
+
+			// 	} );
+
+			// } );
 
 			function init() {
 				
 
-				const overlay = document.getElementById( 'overlay' );
-				overlay.remove();
+				// const overlay = document.getElementById( 'overlay' );
+				// overlay.remove();
 
 				const container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.set(0,11,35);
+				camera.position.set(0,11,40);
 				
 				// scene
 
@@ -235,16 +241,21 @@
 					'models/mmd/pmx/Haumeric.pmx',
 					'models/mmd/pmx/Charibert.pmx',
 					'models/mmd/pmx/Noudenet.pmx',
+					'models/mmd/pmx/Charibert_shenwenguan.pmx',
 					'models/mmd/pmx/Haumeric_shenxueyuan.pmx',
 					'models/mmd/pmx/Noudenet_shenxueyuan.pmx',
-					'models/mmd/pmx/Charibert_shenwenguan.pmx',
 					'models/mmd/pmx/Haurchefant.pmx',
 					'models/mmd/pmx/Noudenet_zongguan.pmx',
 					'models/mmd/pmx/Haumeric_zongguan.pmx',
 					'models/mmd/pmx/Charibert_zongguan.pmx',
 				];
-				let Model_Index = Math.round(Math.random()*9);
-				// let Model_Index = 5;
+				let Model_Index;
+				let Vmd_Index = Math.round(Math.random()*8);
+				// Vmd_Index = 8;
+				if (Vmd_Index==6){Model_Index = Math.round(Math.random()*5)+4;}
+				else{Model_Index = Math.round(Math.random()*9);}
+				
+				// Model_Index = 6;
 				const modelFile = modelFiles [Model_Index];
 
 				
@@ -254,6 +265,10 @@
 					'models/mmd/vmds/SandM.vmd',
 					'models/mmd/vmds/Odo.vmd',
 					'models/mmd/vmds/Addiction.vmd',
+					'models/mmd/vmds/Tik_tok.vmd',
+					'models/mmd/vmds/Follow_The_Leader.vmd',
+					'models/mmd/vmds/Yixinangui.vmd',
+					'models/mmd/vmds/CH4NGE.vmd',
 				 ];
 				const audioFiles = [
 					'models/mmd/audios/Masked_bitcH.mp3',
@@ -261,14 +276,32 @@
 					'models/mmd/audios/SandM.mp3',
 					'models/mmd/audios/Odo.mp3',
 					'models/mmd/audios/Addiction.mp3',
+					'models/mmd/audios/Tik_tok.mp3',
+					'models/mmd/audios/Follow_The_Leader.mp3',
+					'models/mmd/audios/Yixinangui.mp3',
+					'models/mmd/audios/CH4NGE.mp3',
 				];
-				let Vmd_Index = Math.round(Math.random()*4);
-				// let Vmd_Index = 4;
+				
+				const AutherInfos= [
+					{Music: 'Giga.Masked_bitcH/しゅーず',Choreography:'AMU',Motion: 'ごしかん'},
+					{Music: 'Rihanna.Te_Amo',Choreography:'Oleg Kasynets',Motion: 'HIKO'},
+					{Music: 'Rihanna.S&M',Choreography:'Stas Cranberry',Motion: 'あやはち'},
+					{Music: 'Ado.踊',Choreography:'くるとん/あろ',Motion: 'こっちゃ'},
+					{Music: 'Giga&Reol&EVO+.[A]ddiction',Choreography:'足太ぺんた',Motion: 'hino'},
+					{Music: 'Kesha.TiK_ToK',Choreography:'Kesha',Motion: 'あさとし'},
+					{Music: 'Wisin&Yandel.Follow_The_Leader',Choreography:'NatsumiSan',Motion: 'NatsumiSan'},
+					{Music: '梅とら.疑心暗鬼/Sou',Choreography:'ぶっきー',Motion: '曇＠のあき'},
+					{Music: 'Giga.CH4NGE/しゅーず',Choreography:'海夏青',Motion: 'mobiusP'},			
+				];
+
+
 				const vmdFile= vmdFiles[Vmd_Index];
+				const AutherInfo = AutherInfos[Vmd_Index];
 				const audioFile= audioFiles[Vmd_Index];
 
 				const audioParams = { delayTime: 0 };
 				const cameraFiles= ['models/mmd/vmds/wavefile_camera.vmd'];
+				
 
 				helper = new MMDAnimationHelper();
 				const loader = new MMDLoader();
@@ -287,9 +320,9 @@
 						case 0: Haumeric(mesh);break;
 						case 1: Charibert(mesh);break;
 						case 2: Noudenet(mesh);break;
-						case 3: Haumeric_shenxueyuan(mesh);break;
-						case 4: Noudenet_shenxueyuan(mesh);break;
-						case 5: Charibert_shenwenguan(mesh);break;
+						case 3: Charibert_shenwenguan(mesh);break;
+						case 4: Haumeric_shenxueyuan(mesh);break;
+						case 5: Noudenet_shenxueyuan(mesh);break;
 						case 6: Haurchefant(mesh);break;
 						case 7: Noudenet_zongguan(mesh);break;
 						case 8: Haumeric_zongguan(mesh);break;
@@ -329,14 +362,16 @@
 				
 						loadmodel(Model_Index);
 				//
-
+						
 
 				window.addEventListener( 'resize', onWindowResize );
-				function initGui() {
+				function initGui(AutherInfo) {
 					const gui = new GUI();
+					
+					const Info =gui.addFolder( 'Info' );
 					const folder = gui.addFolder( 'Light' );
 					const folder_2 = gui.addFolder( 'spotLight' );
-					const folder_3 = gui.addFolder( 'Controls' );
+					const folder_3 = gui.addFolder( 'Others' );
 					const controls = {};
 					const keys = [];
 					const params = {
@@ -349,6 +384,10 @@
 					focus: spotLight.shadow.focus,
 					shadows: true
 				};
+				
+				Info.add(AutherInfo,'Music');
+				Info.add(AutherInfo,'Choreography');
+				Info.add(AutherInfo,'Motion');			
 				folder.addColor( api, 'Directional' ).onChange( setColor(dirLight.color));
 				folder.addColor( api, 'Hemisphere sky' ).onChange( setColor(hemiLight.color));
 				folder.addColor( api, 'Hemisphere ground' ).onChange( setColor(hemiLight.groundColor));
@@ -386,10 +425,13 @@
 				folder_3.add( api, 'ik' ).onChange( function () {
 					ikHelper.visible = api[ 'ik' ];
 					} );
-	
+					
+					folder.close()
+					folder_2.close()
+					folder_3.close()
 
 				}
-				initGui();
+				initGui(AutherInfo);
 
 			}
 				
